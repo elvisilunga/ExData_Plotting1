@@ -3,12 +3,12 @@ hpw <- read.table("household_power_consumption.txt", header=TRUE, sep=";",col.na
 ## Subsetting the relevant data (01-20-2007 to 02-02-2007) ##
 hpw2 <- hpw[66637:69516,]
 
-## Starting by creating a png object ##
+## creating a png file = Plot 4 ##
 png(filename = "Plot4.png", width = 480, height = 480, units = "px")
 ## Then comes the command for multiple plots (two plots in a row and two in column)##
 par(mfrow = c(2,2))
 ## First plot (top left) ##
-plot(hpw2$datetime,hpw2$Global_active_power, xlab="", ylab="Global Power Active (kilowatts)",type = "l")
+hist(hpw2$Global_active_power, main="Global Active Power", xlab="Global Active Power (Kilowatts)", ylab="Frequency",col="red")
 ## Second plot (top right) ##
 plot(hpw2$datetime, hpw2$Volage, type="l", xlab="datetime", ylab="Voltage")
 ## Third plot (bottom left) ##
